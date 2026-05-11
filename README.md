@@ -164,7 +164,7 @@ Simulation results showed stable tracking with low steady-state error and smooth
 
 ---
 
-## 👨‍💻 Authors
+##  Authors
 
 * Avneesh Singh
 * Tisha Dewangan
