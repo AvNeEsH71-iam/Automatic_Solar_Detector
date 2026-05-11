@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "author": "Group 3 - IISER Mohali (PHY312)",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 300, "left": 350, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 3.2,
+      "left": 48.8,
+      "attrs": { "label": "LDR1-TopLeft" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr2",
+      "top": 0,
+      "left": 250,
+      "attrs": { "label": "LDR2-TopRight" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr3",
+      "top": 130,
+      "left": 50,
+      "attrs": { "label": "LDR3-BotLeft" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr4",
+      "top": 130,
+      "left": 250,
+      "attrs": { "label": "LDR4-BotRight" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "srv1",
+      "top": 50,
+      "left": 650,
+      "attrs": { "label": "Azimuth" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "srv2",
+      "top": 200,
+      "left": 650,
+      "attrs": { "label": "Elevation" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd", "top": 530, "left": 350, "attrs": { "pins": "i2c" } },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 300,
+      "left": 150,
+      "attrs": { "color": "green", "label": "Tracking ON" }
+    }
+  ],
+  "connections": [
+    [ "ldr1:VCC", "uno:5V", "red", [] ],
+    [ "ldr1:GND", "uno:GND.1", "black", [] ],
+    [ "ldr1:AO", "uno:A0", "green", [] ],
+    [ "ldr2:VCC", "uno:5V", "red", [] ],
+    [ "ldr2:GND", "uno:GND.1", "black", [] ],
+    [ "ldr2:AO", "uno:A1", "green", [] ],
+    [ "ldr3:VCC", "uno:5V", "red", [] ],
+    [ "ldr3:GND", "uno:GND.1", "black", [] ],
+    [ "ldr3:AO", "uno:A2", "green", [] ],
+    [ "ldr4:VCC", "uno:5V", "red", [] ],
+    [ "ldr4:GND", "uno:GND.1", "black", [] ],
+    [ "ldr4:AO", "uno:A3", "green", [] ],
+    [ "srv1:V+", "uno:5V", "red", [] ],
+    [ "srv1:GND", "uno:GND.1", "black", [] ],
+    [ "srv1:PWM", "uno:9", "orange", [] ],
+    [ "srv2:V+", "uno:5V", "red", [] ],
+    [ "srv2:GND", "uno:GND.1", "black", [] ],
+    [ "srv2:PWM", "uno:10", "orange", [] ],
+    [ "lcd:GND", "uno:GND.1", "black", [] ],
+    [ "lcd:VCC", "uno:5V", "red", [] ],
+    [ "lcd:SDA", "uno:A4", "blue", [] ],
+    [ "lcd:SCL", "uno:A5", "yellow", [] ],
+    [ "led1:A", "uno:8", "green", [] ],
+    [ "led1:K", "uno:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
