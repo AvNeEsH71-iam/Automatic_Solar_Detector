@@ -70,21 +70,69 @@ The system continuously repeats this process every 100 ms.
 
 ## Core Equations
 
-### Voltage Divider Output
+### 1. Voltage Divider Equation
 
-V_{out}=V_{CC}\cdot\frac{R_f}{R_{LDR}+R_f}
+This equation converts the LDR resistance into a measurable voltage for the Arduino.
 
-### Lambert’s Cosine Law
+Vout = VCC × (Rf / (RLDR + Rf))
 
-P=P_0\cos\theta
+Where:
 
-### Azimuth Error Signal
+- Vout → Output voltage read by Arduino
+- VCC → Supply voltage (5V)
+- Rf → Fixed resistor (10kΩ)
+- RLDR → Resistance of the LDR
 
-e_{az}=(V_1+V_3)-(V_2+V_4)
+---
 
-### Elevation Error Signal
+### 2. Lambert’s Cosine Law
 
-e_{el}=(V_1+V_2)-(V_3+V_4)
+The power received by the solar panel depends on the angle of sunlight.
+
+P = P0 × cos(θ)
+
+Where:
+
+- P → Effective power received
+- P0 → Maximum power when sunlight is perpendicular
+- θ → Angle between sunlight and panel normal
+
+---
+
+### 3. Azimuth Error Signal
+
+Used to determine whether the panel should move left or right.
+
+eaz = (V1 + V3) − (V2 + V4)
+
+Where:
+
+- V1 → Top-left LDR voltage
+- V2 → Top-right LDR voltage
+- V3 → Bottom-left LDR voltage
+- V4 → Bottom-right LDR voltage
+
+---
+
+### 4. Elevation Error Signal
+
+Used to determine whether the panel should move up or down.
+
+eel = (V1 + V2) − (V3 + V4)
+
+---
+
+### 5. Servo Angle Update Equation
+
+The servo angle changes proportionally to the detected error.
+
+Δϕ = Kp × e
+
+Where:
+
+- Δϕ → Change in servo angle
+- Kp → Proportional gain constant
+- e → Error signal
 
 ---
 
