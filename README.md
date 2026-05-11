@@ -167,8 +167,8 @@ Simulation results showed stable tracking with low steady-state error and smooth
 ## 👨‍💻 Authors
 
 * Avneesh Singh
-* Tisha
-* Brahamjot Singh Chawla
+* Tisha Dewangan
+* Brahamjot Singh
 
 Group 3 — PHY312 Lab Project
 
